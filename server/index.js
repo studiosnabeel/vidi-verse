@@ -15,6 +15,12 @@ const connect = async () => {
   }
 };
 
+// Middlewares
+app.use("/api/auths", authRoutes);
+app.use("/api/users", userRoutes);
+app.use("/api/videos", videoRoutes);
+app.use("/api/comments", commentRoutes);
+
 app.listen("5000", () => {
   connect();
   console.log("Server running successfully on port 5000");
