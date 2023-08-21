@@ -18,13 +18,6 @@ import {
 const SideMenu = () => {
   return (
     <section className='h-[100vh] items-center flex-col flex sticky top-0'>
-      {/* Logo/Icon */}
-
-      <div className='py-[18px] px-[26px] flex gap-2 items-center justify-center'>
-        <BiSolidVideos className='text-2xl text-[#ff0000]' />
-        <h1 className='font-semibold text-md text-[#272727]'>VidiVerse</h1>
-      </div>
-
       {/* Items */}
 
       <div className='flex flex-col gap-3 justify-center items-start px-2 font-semibold'>
