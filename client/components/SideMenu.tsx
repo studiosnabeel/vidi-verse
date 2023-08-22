@@ -17,7 +17,7 @@ import {
 
 const SideMenu = () => {
   return (
-    <section className='h-[100vh] items-center flex-col flex sticky top-0'>
+    <section className='h-screen mt-4 sticky top-20'>
       {/* Items */}
 
       <div className='flex flex-col gap-3 justify-center items-start px-2 font-semibold'>

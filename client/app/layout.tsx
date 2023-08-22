@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={inter.className}>
-        <div className='mx-4'>
+        <div className='mx-4 font-roboto'>
           <Navbar />
           <div className='flex'>
             <SideMenu />
