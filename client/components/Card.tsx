@@ -11,7 +11,7 @@ const Card = ({ isSideBar }) => {
         }`}
       >
         <Image
-          className='w-[100%] md:w-[350px]'
+          className='w-[100%] lg:w-[400px] hover:rounded-none mb-2 rounded-md'
           src='/thumbnail.jpg'
           alt=''
           width={50}
