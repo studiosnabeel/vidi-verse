@@ -17,30 +17,30 @@ import {
 
 const SideMenu = () => {
   return (
-    <section className='h-screen mt-4 sticky top-20'>
+    <section className='h-screen mt-4 sticky top-20 text-[#272727]'>
       {/* Items */}
 
       <div className='flex flex-col gap-3 justify-center items-start px-2 font-semibold'>
         <div className='flex gap-2 cursor-pointer'>
           <VscHome />
-          <h4 className='text-xs'>Home</h4>
+          <h4 className='textsm'>Home</h4>
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <MdTravelExplore />
-          <h4 className='text-xs'>Explore</h4>
+          <h4 className='text-sm'>Explore</h4>
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <MdOutlineSubscriptions />
-          <h4 className='text-xs'>Subscriptions</h4>
+          <h4 className='text-sm'>Subscriptions</h4>
         </div>
         <hr className='border-t-1 w-[90%] border-gray-400 my-2' />
         <div className='flex gap-2 cursor-pointer'>
           <MdPhotoLibrary />
-          <h4 className='text-xs'>Library</h4>
+          <h4 className='text-sm'>Library</h4>
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <AiOutlineHistory />
-          <h4 className='text-xs'>History</h4>
+          <h4 className='text-sm'>History</h4>
         </div>
         <hr className='border-t-1 w-[90%] border-gray-400 mt-2' />
         <div className='flex flex-col gap-2 items-center text-start'>
@@ -52,47 +52,47 @@ const SideMenu = () => {
             style={{ maxWidth: "max-content" }}
           >
             <AiOutlineUser />
-            <button className='text-xs'>SIGNIN</button>
+            <button className='text-sm'>SIGNIN</button>
           </div>
         </div>
         <hr className='border-t-1 w-[90%] border-gray-400 ' />
         <h4 className='text-sm'>Best of VidiVerse</h4>
         <div className='flex gap-2 cursor-pointer'>
           <PiMusicNotesSimpleThin />
-          <h4 className='text-xs'>Music</h4>
+          <h4 className='text-sm'>Music</h4>
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <MdOutlineSportsSoccer />
-          <h4 className='text-xs'>Sports</h4>
+          <h4 className='text-sm'>Sports</h4>
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <SiYoutubegaming />
-          <h4 className='text-xs'>Gaming</h4>
+          <h4 className='text-sm'>Gaming</h4>
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <BiCameraMovie />
-          <h4 className='text-xs'>Movies</h4>
+          <h4 className='text-sm'>Movies</h4>
         </div>
         <div className='flex gap-2 cursor-pointer'>
           <PiNewspaperClipping />
-          <h4 className='text-xs'>News</h4>
+          <h4 className='text-sm'>News</h4>
         </div>{" "}
         <div className='flex gap-2 cursor-pointer'>
           <MdOutlineLiveTv />
-          <h4 className='text-xs'>Live</h4>
+          <h4 className='text-sm'>Live</h4>
         </div>
         <hr className='border-t-1 w-[90%] border-gray-400 mt-2' />
         <div className='flex gap-2 cursor-pointer'>
           <MdSettingsApplications />
-          <h4 className='text-xs'>Settings</h4>
+          <h4 className='text-sm'>Settings</h4>
         </div>{" "}
         <div className='flex gap-2 cursor-pointer'>
           <MdOutlineReportProblem />
-          <h4 className='text-xs'>Report</h4>
+          <h4 className='text-sm'>Report</h4>
         </div>{" "}
         <div className='flex gap-2 cursor-pointer'>
           <MdHelpOutline />
-          <h4 className='text-xs'>Help</h4>
+          <h4 className='text-sm'>Help</h4>
         </div>
       </div>
     </section>

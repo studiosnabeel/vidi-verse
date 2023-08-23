@@ -1,3 +1,4 @@
+import Comments from "@/components/Comments";
 import Image from "next/image";
 import React from "react";
 import {
@@ -78,6 +79,7 @@ const Video = () => {
             Subscribe
           </button>
         </div>
+        <Comments />
       </div>
       <div className='flex-[2] '>Recommendations</div>
     </section>
