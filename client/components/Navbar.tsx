@@ -16,7 +16,7 @@ const Navbar = () => {
         </Link>
         <div className='flex item-center justify-center border-2 p-2 border-r-8 rounded-2xl'>
           <input
-            className='border-none outline-none lg:w-[400px]'
+            className='border-none outline-none lg:w-[400px] w-full'
             type='text'
             placeholder='Search'
           />
