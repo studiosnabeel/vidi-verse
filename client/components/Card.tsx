@@ -6,7 +6,7 @@ const Card = ({ isSideBar }) => {
   return (
     <Link href='/video/test'>
       <div
-        className={`lg:w-[350px] cursor-pointer mb-2 gap-2 cardContainer ${
+        className={`cursor-pointer mb-2 gap-2 cardContainer ${
           isSideBar ? "flex" : "flex-col"
         }`}
       >
