@@ -9,7 +9,7 @@ const login = () => {
       <div className='flex flex-col justify-center items-center h-[100vh] bg-yellow-50 '>
         <div
           className='flex flex-col gap-4 
-      border-2 p-10 rounded-lg bg-[#272727] text-white items-center lg:w-[400px]'
+      border-2 p-10 rounded-lg bg-[#272727] text-white items-center lg:w-[400px] sm:w-[350px] xs:w-[300px] w-[250px]'
         >
           <h2 className='text-center'>SIGN IN</h2>
           <p className='text-center'>to continue to VIDI-VERSE</p>
@@ -48,7 +48,7 @@ const login = () => {
             SIGN UP
           </button>
         </div>
-        <div className='font-semibold flex gap-16 text-[12px] mt-2 justify-between items-center lg:gap-40 text-gray-700 lg:text-sm'>
+        <div className='font-semibold flex gap-6 xs:gap-20 sm:gap-32 text-[12px] mt-2 justify-between items-center lg:gap-40 text-gray-700 lg:text-sm'>
           <div>
             <Link href='/'>
               <h2>English(USA)</h2>

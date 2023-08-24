@@ -21,7 +21,7 @@ const SideMenu = () => {
     <section className='h-screen mt-4 sticky top-20 text-[#272727]'>
       {/* Items */}
 
-      <div className='flex flex-col gap-3 justify-center items-start px-2 font-semibold'>
+      <div className='flex flex-col gap-3 justify-center items-start px-2 font-medium'>
         <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
           <VscHome />
           <h4 className='textsm '>Home</h4>
