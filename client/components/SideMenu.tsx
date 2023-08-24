@@ -14,6 +14,7 @@ import {
   MdOutlineReportProblem,
   MdHelpOutline,
 } from "react-icons/md";
+import Link from "next/link";
 
 const SideMenu = () => {
   return (
@@ -47,13 +48,15 @@ const SideMenu = () => {
           <p className='text-xs font-normal'>
             Sign in to like videos, <br /> comment, subscribe.
           </p>
-          <div
-            className='inline-flex items-center gap-1 border-2 border-blue-400 p-2 text-blue-600  cursor-pointer'
-            style={{ maxWidth: "max-content" }}
-          >
-            <AiOutlineUser />
-            <button className='text-sm'>SIGNIN</button>
-          </div>
+          <Link href='/login'>
+            <div
+              className='inline-flex items-center gap-1 border-2 border-blue-400 p-2 text-blue-600  cursor-pointer'
+              style={{ maxWidth: "max-content" }}
+            >
+              <AiOutlineUser />
+              <button className='text-sm'>SIGNIN</button>
+            </div>
+          </Link>
         </div>
         <hr className='border-t-1 w-[90%] border-gray-400 ' />
         <h4 className='text-sm'>Best of VidiVerse</h4>

@@ -22,13 +22,15 @@ const Navbar = () => {
           />
           <BiSearch className='cursor-pointer text-lg text-[#272727]' />
         </div>
-        <div
-          className='inline-flex items-center gap-1 border-2 border-blue-400 p-2 text-blue-600  cursor-pointer'
-          style={{ maxWidth: "max-content" }}
-        >
-          <AiOutlineUser />
-          <button className='text-xs'>SIGNIN</button>
-        </div>
+        <Link href='/login'>
+          <div
+            className='inline-flex items-center gap-1 border-2 border-blue-400 p-2 text-blue-600  cursor-pointer'
+            style={{ maxWidth: "max-content" }}
+          >
+            <AiOutlineUser />
+            <button className='text-xs'>SIGNIN</button>
+          </div>
+        </Link>
       </nav>
     </section>
   );
