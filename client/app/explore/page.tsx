@@ -1,9 +1,10 @@
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
 import SideMenu from "@/components/SideMenu";
+import React from "react";
 
-export default function Home() {
-  const type = "random";
+const explore = () => {
+  const type = "trend";
   return (
     <div className='mx-4 font-roboto'>
       <Navbar />
@@ -17,4 +18,6 @@ export default function Home() {
       </div>
     </div>
   );
-}
+};
+
+export default explore;
