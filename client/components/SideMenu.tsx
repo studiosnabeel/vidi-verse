@@ -22,19 +22,23 @@ const SideMenu = () => {
       {/* Items */}
       <div className='max-h-[calc(100vh-5rem)] overflow-y-auto max-h-scrollbar'>
         <div className='flex flex-col gap-3 justify-center items-start px-2 font-medium'>
-          <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
-            <VscHome />
-            <h4 className='textsm '>Home</h4>
-          </div>
-          <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
-            <MdTravelExplore />
-            <h4 className='text-sm '>Explore</h4>
-          </div>
+          <Link href='/'>
+            <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
+              <VscHome />
+              <h4 className='textsm '>Home</h4>
+            </div>
+          </Link>
+          <Link href='/explore'>
+            <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
+              <MdTravelExplore />
+              <h4 className='text-sm '>Explore</h4>
+            </div>
+          </Link>
           <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
             <MdOutlineSubscriptions />
             <h4 className='text-sm '>Subscriptions</h4>
           </div>
-          <hr className='border-t-1 w-[90%] border-gray-400 my-2' />
+          <hr className='border-t-1 w-[75px] lg:w-[140px] xs:w-[100px] border-gray-400 my-2' />
           <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
             <MdPhotoLibrary />
             <h4 className='text-sm'>Library</h4>
@@ -43,7 +47,7 @@ const SideMenu = () => {
             <AiOutlineHistory />
             <h4 className='text-sm'>History</h4>
           </div>
-          <hr className='border-t-1 w-[90%] border-gray-400 mt-2' />
+          <hr className='border-t-1 w-[75px] lg:w-[140px] xs:w-[100px] border-gray-400 mt-2' />
           <div className='flex flex-col gap-2 items-center text-start'>
             <p className='text-xs font-normal'>
               Sign in to like videos, <br /> comment, subscribe.
@@ -58,7 +62,7 @@ const SideMenu = () => {
               </div>
             </Link>
           </div>
-          <hr className='border-t-1 w-[90%] border-gray-400 ' />
+          <hr className='border-t-1 w-[75px] lg:w-[140px] xs:w-[100px] border-gray-400 ' />
           <h4 className='text-sm'>Best of VidiVerse</h4>
           <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
             <PiMusicNotesSimpleThin />
@@ -84,7 +88,7 @@ const SideMenu = () => {
             <MdOutlineLiveTv />
             <h4 className='text-sm'>Live</h4>
           </div>
-          <hr className='border-t-1 w-[90%] border-gray-400 mt-2' />
+          <hr className='border-t-1 w-[75px] lg:w-[140px] xs:w-[100px] border-gray-400 mt-2' />
           <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
             <MdSettingsApplications />
             <h4 className='text-sm'>Settings</h4>
