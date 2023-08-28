@@ -1,7 +1,10 @@
+"use client";
 import React from "react";
+import { RootState } from "@/redux/store";
 import { AiOutlineUser, AiOutlineHistory } from "react-icons/ai";
 import { BiSolidVideos, BiCameraMovie } from "react-icons/bi";
 import { VscHome } from "react-icons/vsc";
+import { useSelector } from "react-redux";
 import { SiYoutubegaming } from "react-icons/si";
 import { PiMusicNotesSimpleThin, PiNewspaperClipping } from "react-icons/pi";
 import {
@@ -17,6 +20,8 @@ import {
 import Link from "next/link";
 
 const SideMenu = () => {
+  const { currentUser } = useSelector((state: RootState) => state.user);
+
   return (
     <section className='h-screen mt-4 sticky top-20 text-[#272727]'>
       {/* Items */}
@@ -48,21 +53,26 @@ const SideMenu = () => {
             <h4 className='text-sm'>History</h4>
           </div>
           <hr className='border-t-1 w-[75px] lg:w-[140px] xs:w-[100px] border-gray-400 mt-2' />
-          <div className='flex flex-col gap-2 items-center text-start'>
-            <p className='text-xs font-normal'>
-              Sign in to like videos, <br /> comment, subscribe.
-            </p>
-            <Link href='/login'>
-              <div
-                className='inline-flex items-center gap-1 border-2 border-blue-400 p-2 text-blue-600  cursor-pointer'
-                style={{ maxWidth: "max-content" }}
-              >
-                <AiOutlineUser />
-                <button className='text-sm'>SIGNIN</button>
+          {!currentUser && (
+            <>
+              {" "}
+              <div className='flex flex-col gap-2 items-center text-start'>
+                <p className='text-xs font-normal'>
+                  Sign in to like videos, <br /> comment, subscribe.
+                </p>
+                <Link href='/login'>
+                  <div
+                    className='inline-flex items-center gap-1 border-2 border-blue-400 p-2 text-blue-600  cursor-pointer'
+                    style={{ maxWidth: "max-content" }}
+                  >
+                    <AiOutlineUser />
+                    <button className='text-sm'>SIGNIN</button>
+                  </div>
+                </Link>
               </div>
-            </Link>
-          </div>
-          <hr className='border-t-1 w-[75px] lg:w-[140px] xs:w-[100px] border-gray-400 ' />
+              <hr className='border-t-1 w-[75px] lg:w-[140px] xs:w-[100px] border-gray-400 ' />
+            </>
+          )}
           <h4 className='text-sm'>Best of VidiVerse</h4>
           <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
             <PiMusicNotesSimpleThin />
