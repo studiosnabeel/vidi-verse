@@ -39,10 +39,12 @@ const SideMenu = () => {
               <h4 className='text-sm '>Explore</h4>
             </div>
           </Link>
-          <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
-            <MdOutlineSubscriptions />
-            <h4 className='text-sm '>Subscriptions</h4>
-          </div>
+          <Link href='/sub'>
+            <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
+              <MdOutlineSubscriptions />
+              <h4 className='text-sm '>Subscriptions</h4>
+            </div>
+          </Link>
           <hr className='border-t-1 w-[75px] lg:w-[140px] xs:w-[100px] border-gray-400 my-2' />
           <div className='flex gap-2 cursor-pointer hover:bg-gray-200 w-full lg:text-lg items-center'>
             <MdPhotoLibrary />

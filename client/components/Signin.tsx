@@ -15,10 +15,14 @@ const Signin = () => {
     e.preventDefault();
     dispatch(loginStart());
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/signin", {
-        name,
-        password,
-      });
+      const res = await axios.post(
+        "http://localhost:5000/api/auth/signin",
+        {
+          name,
+          password,
+        },
+        { withCredentials: true }
+      );
       dispatch(loginSuccess(res.data));
       // console.log(res.data);
     } catch (err) {
