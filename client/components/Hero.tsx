@@ -9,7 +9,10 @@ const Hero = ({ type }) => {
   useEffect(() => {
     const fetchvideos = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/api/videos/${type}`);
+        const res = await axios.get(
+          `http://localhost:5000/api/videos/${type}`,
+          { withCredentials: true }
+        );
         // console.log(res.data);
         setVideos(res.data);
       } catch (err) {

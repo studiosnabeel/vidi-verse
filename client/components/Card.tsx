@@ -21,7 +21,8 @@ const Card = ({
     const fetchchannels = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:5000/api/users/find/${userId}`
+          `http://localhost:5000/api/users/find/${userId}`,
+          { withCredentials: true }
         );
         // console.log(res.data);
         setChannel(res.data);
