@@ -1,4 +1,6 @@
 "use client";
+import { useDispatch } from "react-redux";
+import { loginFailure, loginStart, loginSuccess } from "@/redux/userSlice";
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
@@ -7,18 +9,20 @@ const Signin = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+  const dispatch = useDispatch();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    dispatch(loginStart());
     try {
       const res = await axios.post("http://localhost:5000/api/auth/signin", {
         name,
         password,
       });
-      console.log(res.data);
+      dispatch(loginSuccess(res.data));
+      // console.log(res.data);
     } catch (err) {
-      console.log("Wrong credentials!", err);
+      dispatch(loginFailure());
     }
   };
 
