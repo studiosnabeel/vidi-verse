@@ -4,6 +4,8 @@ import { loginFailure, loginStart, loginSuccess } from "@/redux/userSlice";
 import axios from "axios";
 import Link from "next/link";
 import React, { useState } from "react";
+import { auth, provider } from "@/firebase";
+import { signInWithPopup } from "firebase/auth";
 
 const Signin = () => {
   const [name, setName] = useState("");
@@ -30,6 +32,30 @@ const Signin = () => {
     }
   };
 
+  const signInWithGoogle = async () => {
+    dispatch(loginStart());
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        // console.log(result);
+        axios
+          .post(
+            "http://localhost:5000/api/auth/google",
+            {
+              name: result.user.displayName,
+              email: result.user.email,
+              img: result.user.photoURL,
+            },
+            { withCredentials: true }
+          )
+          .then((res) => {
+            dispatch(loginSuccess(res.data));
+          });
+      })
+      .catch((error) => {
+        dispatch(loginFailure());
+      });
+  };
+
   return (
     <div className='flex flex-col justify-center items-center h-[100vh] bg-yellow-50 '>
       <div
@@ -37,7 +63,6 @@ const Signin = () => {
       border-2 p-10 rounded-lg bg-[#272727] text-white items-center lg:w-[400px] sm:w-[350px] xs:w-[300px] w-[250px]'
       >
         <h2 className='text-center'>SIGN IN</h2>
-        <p className='text-center'>to continue to VIDI-VERSE</p>
         <input
           className='text-[#272727] outline-none rounded-sm lg:w-[300px] lg:py-2'
           type='text'
@@ -60,6 +85,15 @@ const Signin = () => {
         </button>
         <hr className='border-yellow-200 w-48 mb-4 mt-2 lg:w-[275px] lg:py-2' />
         <span>OR</span>
+        <button
+          className='text-white bg-[#ff0000] border-2 border-gray-500 rounded-md px-6 py-[2px] cursor-pointer h-max w-max hover:rounded-none'
+          onClick={signInWithGoogle}
+        >
+          Sign in with Google
+        </button>
+        <hr className='border-yellow-200 w-48 mb-4 mt-2 lg:w-[275px] lg:py-2' />
+
+        <span>OR</span>
 
         <input
           className='text-[#272727] outline-none rounded-sm lg:w-[300px] lg:py-2'
@@ -69,6 +103,7 @@ const Signin = () => {
         <input
           className='text-[#272727] outline-none rounded-sm lg:w-[300px] lg:py-2'
           type='text'
+          placeholder='Email'
         />
         <input
           className='text-[#272727] outline-none rounded-sm lg:w-[300px] lg:py-2'

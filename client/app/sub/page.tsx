@@ -12,7 +12,7 @@ const Sub = () => {
         <div className='flex-[1] hidden xs:block'>
           <SideMenu />
         </div>
-        <div>
+        <div className='flex-[7]'>
           <Hero type={type} />
         </div>
       </div>
