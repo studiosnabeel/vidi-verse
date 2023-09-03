@@ -1,6 +1,7 @@
 import React from "react";
 import { FaSearch } from "react-icons/fa";
 import { CgProfile } from "react-icons/cg";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
@@ -14,10 +15,12 @@ const Navbar = () => {
         <FaSearch className='text-white' />
       </div>
       <div>
-        <div className='flex gap-2 items-center border-2 border-blue-500 justify-center py-1 w-fit px-2 text-white'>
-          <CgProfile />
-          <h2 className='cursor-pointer'>SIGN IN</h2>
-        </div>
+        <Link to='/login'>
+          <div className='flex gap-2 items-center border-2 border-blue-500 justify-center py-1 w-fit px-2 text-white'>
+            <CgProfile />
+            <h2 className='cursor-pointer'>SIGN IN</h2>
+          </div>
+        </Link>
       </div>
     </section>
   );

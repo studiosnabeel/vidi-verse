@@ -38,10 +38,14 @@ const Menu = () => {
         </div>
         <hr className='' />
         <p>Signin to like videos, comment and subscribe. </p>
-        <div className='flex gap-2 items-center border-2 border-blue-500 justify-center py-1 w-fit px-2 my-4'>
-          <CgProfile />
-          <h2 className='cursor-pointer'>SIGN IN</h2>
-        </div>
+
+        <Link to='/login'>
+          <div className='flex gap-2 items-center border-2 border-blue-500 justify-center py-1 w-fit px-2 my-4'>
+            <CgProfile />
+            <h2 className='cursor-pointer'>SIGN IN</h2>
+          </div>
+        </Link>
+
         <hr className='mb-2' />
         <h2>BEST OF VIDIVERSE</h2>
         <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
