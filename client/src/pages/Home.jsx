@@ -1,21 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../components/Card";
+import axios from "axios";
 
-const Home = () => {
+const Home = ({ type }) => {
+  const [videos, setVideos] = useState([]);
+
+  useEffect(() => {
+    const fetchVideos = async () => {
+      const res = await axios.get(`http://localhost:5000/api/videos/${type}`);
+      setVideos(res.data);
+    };
+    fetchVideos();
+  }, [type]);
+
   return (
     <div className='flex justify-between flex-wrap'>
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      {videos.map((video) => (
+        <Card key={video._id} video={video} />
+      ))}
     </div>
   );
 };

@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { format } from "timeago.js";
+import axios from "axios";
 
-const Card = ({ type }) => {
+const Card = ({ type, video }) => {
+  //====== Tailwind CSS instances =======
   const cardClasses = `container ${
     type !== "sm" ? "w-360 mb-45 gap-10" : "mb-10 flex gap-2"
   } cursor-pointer`;
@@ -16,27 +19,36 @@ const Card = ({ type }) => {
     type === "sm" && "hidden"
   } w-[36px] h-[36px] rounded-[50%] bg-[#999] `;
 
+  //========= React-Hooks Section ==========
+  const [channel, setChannel] = useState({});
+
+  useEffect(() => {
+    const fetchChannel = async () => {
+      const res = await axios.get(
+        `http://localhost:5000/api/users/find/${video.userId}`
+      );
+      setChannel(res.data);
+    };
+    fetchChannel();
+  }, [video.userId]);
+
   return (
     <Link to='/video/test' style={{ textDecoration: "none" }}>
-      <div type={type} className={cardClasses}>
+      <div type={type} key={video._id} className={cardClasses}>
         <img
           type={type}
           className={ThumbnailImage}
-          src='https://img.freepik.com/premium-psd/youtube-thumbnail-web-banner-template-review-any-products_633645-89.jpg?size=626&ext=jpg&ga=GA1.1.1177778389.1693544291&semt=ais'
+          src={video.imgUrl}
           alt='Video Thumbnail'
         />
         <div className={Details}>
-          <img
-            className={channelImage}
-            src='https://images.pexels.com/photos/18090582/pexels-photo-18090582/free-photo-of-portrait-of-a-young-woman.jpeg?auto=compress&cs=tinysrgb&w=600'
-            alt='Channel Image'
-          />
+          <img className={channelImage} src={channel.img} />
           <div className='texts'>
-            <h2 className='title text-[16px] font-[500]'>
-              This is a test video
-            </h2>
-            <h3 className='channelName text-[14px] my-[9px]'>studiosnabeel</h3>
-            <p className='info text-[14px]'>15,500 views - 1 day ago</p>
+            <h2 className='title text-[16px] font-[500]'>{video.title}</h2>
+            <h3 className='channelName text-[14px] my-[9px]'>{channel.name}</h3>
+            <p className='info text-[14px]'>
+              {video.views} views - {format(video.createdAt)}
+            </p>
           </div>
         </div>
       </div>

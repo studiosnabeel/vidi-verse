@@ -15,14 +15,18 @@ const Menu = () => {
       </Link>
 
       <div className='sideMenuItems flex flex-col gap-1 overflow-y-auto'>
-        <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
-          <AiOutlineHome />
-          <h2>Home</h2>
-        </div>
-        <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
-          <MdTravelExplore />
-          <h2>Explore</h2>
-        </div>
+        <Link to='/'>
+          <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
+            <AiOutlineHome />
+            <h2>Home</h2>
+          </div>
+        </Link>
+        <Link to='trends'>
+          <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
+            <MdTravelExplore />
+            <h2>Explore</h2>
+          </div>
+        </Link>
         <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
           <MdOutlineSubscriptions />
           <h2>Subscription</h2>
