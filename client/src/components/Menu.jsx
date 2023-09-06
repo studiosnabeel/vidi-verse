@@ -3,8 +3,11 @@ import { CgProfile } from "react-icons/cg";
 import { MdOutlineSubscriptions, MdTravelExplore } from "react-icons/md";
 import { Link } from "react-router-dom";
 import logo from "../assets/assets";
+import { useSelector } from "react-redux";
 
 const Menu = () => {
+  const { currentUser } = useSelector((state) => state.user);
+
   return (
     <div className='flex flex-col gap-4 bg-[#17141b] h-[100vh] text-white px-4 py-4 flex-[1] text-[14px] sticky top-0'>
       <Link to='/' style={{ textDecoration: "none", color: "inherit" }}>
@@ -27,10 +30,13 @@ const Menu = () => {
             <h2>Explore</h2>
           </div>
         </Link>
-        <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
-          <MdOutlineSubscriptions />
-          <h2>Subscription</h2>
-        </div>
+        <Link to='subscriptions'>
+          <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
+            <MdOutlineSubscriptions />
+            <h2>Subscriptions</h2>
+          </div>
+        </Link>
+
         <hr className='' />
         <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
           <MdOutlineSubscriptions />
@@ -41,16 +47,28 @@ const Menu = () => {
           <h2>History</h2>
         </div>
         <hr className='' />
-        <p>Signin to like videos, comment and subscribe. </p>
 
-        <Link to='/login'>
-          <div className='flex gap-2 items-center border-2 border-blue-500 justify-center py-1 w-fit px-2 my-4'>
-            <CgProfile />
-            <h2 className='cursor-pointer'>SIGN IN</h2>
-          </div>
-        </Link>
+        {!currentUser ? (
+          <>
+            <p>Signin to like videos, comment and subscribe. </p>
 
-        <hr className='mb-2' />
+            <Link to='/login'>
+              <div className='flex gap-2 items-center border-2 border-blue-500 justify-center py-1 w-fit px-2 my-4'>
+                <CgProfile />
+                <h2 className='cursor-pointer'>SIGN IN</h2>
+              </div>
+            </Link>
+
+            <hr className='mb-2' />
+          </>
+        ) : (
+          <Link to='/login'>
+            <div className='flex gap-2 items-center border-2 border-blue-500 justify-center py-1 w-fit px-2 my-4'>
+              <CgProfile />
+              <h2 className='cursor-pointer'>SIGN OUT</h2>
+            </div>
+          </Link>
+        )}
         <h2>BEST OF VIDIVERSE</h2>
         <div className='flex gap-4 items-center my-2 cursor-pointer hover:bg-[#363636] px-2'>
           <MdOutlineSubscriptions />
