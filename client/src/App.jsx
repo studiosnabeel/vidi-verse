@@ -4,8 +4,10 @@ import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
 import Video from "./pages/Video";
 import Login from "./pages/Login";
+import { useSelector } from "react-redux";
 
 const App = () => {
+  const { currentUser } = useSelector((state) => state.user);
   return (
     <div className='flex'>
       <BrowserRouter>
@@ -20,7 +22,6 @@ const App = () => {
                 <Route path='trends' element={<Home type='trend' />} />
                 <Route path='subscriptions' element={<Home type='sub' />} />
                 <Route path='login' element={<Login />} />
-
                 <Route path='video'>
                   <Route path=':id' element={<Video />} />
                 </Route>

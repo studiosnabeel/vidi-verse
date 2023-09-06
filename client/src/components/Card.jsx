@@ -33,7 +33,7 @@ const Card = ({ type, video }) => {
   }, [video.userId]);
 
   return (
-    <Link to='/video/test' style={{ textDecoration: "none" }}>
+    <Link to={`/video/${video._id}`} style={{ textDecoration: "none" }}>
       <div type={type} key={video._id} className={cardClasses}>
         <img
           type={type}
